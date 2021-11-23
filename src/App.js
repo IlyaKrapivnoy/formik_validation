@@ -1,4 +1,4 @@
-import Header from './Header';
+import Header from './components/Header';
 import './App.css';
 import { Container, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
