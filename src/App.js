@@ -61,11 +61,20 @@ function App() {
                                             label='First Name'
                                         />
                                     </Grid>
+
                                     <Grid item xs={6}>
                                         <TextField
                                             name='lastName'
                                             label='Last Name'
                                         />
+                                    </Grid>
+
+                                    <Grid item xs={12}>
+                                        <TextField name='email' label='email' />
+                                    </Grid>
+
+                                    <Grid item xs={12}>
+                                        <TextField name='phone' label='phone' />
                                     </Grid>
 
                                     <Grid item xs={12}>
