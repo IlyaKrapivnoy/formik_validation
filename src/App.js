@@ -4,6 +4,7 @@ import { Container, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     formWrapper: {
@@ -34,7 +35,21 @@ function App() {
                                 console.log(values);
                             }}
                         >
-                            <Form></Form>
+                            <Form>
+                                <Grid container spacing={2}>
+                                    <Grid item xs={12}>
+                                        <Typography>Your Details</Typography>
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <Typography>Address</Typography>
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <Typography>
+                                            Booking Information
+                                        </Typography>
+                                    </Grid>
+                                </Grid>
+                            </Form>
                         </Formik>
                     </div>
                 </Container>
