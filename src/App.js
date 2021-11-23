@@ -1,4 +1,5 @@
 import Header from './components/Header';
+import TextField from './components/FormsUI/TextField';
 import './App.css';
 import { Container, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -13,9 +14,22 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const INITIAL_FORM_STATE = {};
+const INITIAL_FORM_STATE = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+};
 
-const FORM_VALIDATION = Yup.object().shape({});
+const FORM_VALIDATION = Yup.object().shape({
+    firstName: Yup.string().required('Required, man'),
+    lastName: Yup.string().required('Required'),
+    email: Yup.string().email('Invalid email').required('Required'),
+    phone: Yup.number()
+        .integer()
+        .typeError('Please, enter a valid phone number')
+        .required('Required'),
+});
 
 function App() {
     const classes = useStyles();
