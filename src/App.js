@@ -1,5 +1,7 @@
 import Header from './components/Header';
 import TextField from './components/FormsUI/TextField';
+import Select from './components/FormsUI/Select';
+import countries from './data/countries.json';
 import './App.css';
 import { Container, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -111,6 +113,14 @@ function App() {
 
                                     <Grid item xs={6}>
                                         <TextField name='state' label='state' />
+                                    </Grid>
+
+                                    <Grid item xs={6}>
+                                        <Select
+                                            name='country'
+                                            label='country'
+                                            options={countries}
+                                        />
                                     </Grid>
 
                                     <Grid item xs={12}>
