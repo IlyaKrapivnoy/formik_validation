@@ -22,7 +22,7 @@ const INITIAL_FORM_STATE = {
 };
 
 const FORM_VALIDATION = Yup.object().shape({
-    firstName: Yup.string().required('Required, man'),
+    firstName: Yup.string().required('Your name is required, man'),
     lastName: Yup.string().required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
     phone: Yup.number()
@@ -54,9 +54,24 @@ function App() {
                                     <Grid item xs={12}>
                                         <Typography>Your Details</Typography>
                                     </Grid>
+
+                                    <Grid item xs={6}>
+                                        <TextField
+                                            name='firstName'
+                                            label='First Name'
+                                        />
+                                    </Grid>
+                                    <Grid item xs={6}>
+                                        <TextField
+                                            name='lastName'
+                                            label='Last Name'
+                                        />
+                                    </Grid>
+
                                     <Grid item xs={12}>
                                         <Typography>Address</Typography>
                                     </Grid>
+
                                     <Grid item xs={12}>
                                         <Typography>
                                             Booking Information
