@@ -3,6 +3,7 @@ import TextField from './components/FormsUI/TextField';
 import Select from './components/FormsUI/Select';
 import DateTimePicker from './components/FormsUI/DateTimePicker';
 import Checkbox from './components/FormsUI/Checkbox';
+import Button from './components/FormsUI/Button';
 import countries from './data/countries.json';
 import './App.css';
 import { Container, Grid } from '@material-ui/core';
@@ -170,6 +171,10 @@ function App() {
                                             legend='Terms Of Service'
                                             label='I agree'
                                         />
+                                    </Grid>
+
+                                    <Grid item xs={12}>
+                                        <Button>Submit</Button>
                                     </Grid>
                                 </Grid>
                             </Form>
