@@ -2,6 +2,7 @@ import Header from './components/Header';
 import TextField from './components/FormsUI/TextField';
 import Select from './components/FormsUI/Select';
 import DateTimePicker from './components/FormsUI/DateTimePicker';
+import Checkbox from './components/FormsUI/Checkbox';
 import countries from './data/countries.json';
 import './App.css';
 import { Container, Grid } from '@material-ui/core';
@@ -30,6 +31,7 @@ const INITIAL_FORM_STATE = {
     arrivalDate: '',
     departureDate: '',
     message: '',
+    termsOfService: false,
 };
 
 const FORM_VALIDATION = Yup.object().shape({
@@ -48,6 +50,9 @@ const FORM_VALIDATION = Yup.object().shape({
     arrivalDate: Yup.date().required('Required'),
     departureDate: Yup.date().required('Required'),
     message: Yup.string(),
+    termsOfService: Yup.boolean()
+        .oneOf([true], 'The terms must be accepted')
+        .required('Required'),
 });
 
 function App() {
@@ -156,6 +161,14 @@ function App() {
                                             label='Message'
                                             multiline={true}
                                             rows={4}
+                                        />
+                                    </Grid>
+
+                                    <Grid item xs={12}>
+                                        <Checkbox
+                                            name='termsOfService'
+                                            legend='Terms Of Service'
+                                            label='I agree'
                                         />
                                     </Grid>
                                 </Grid>
