@@ -29,6 +29,7 @@ const INITIAL_FORM_STATE = {
     country: '',
     arrivalDate: '',
     departureDate: '',
+    message: '',
 };
 
 const FORM_VALIDATION = Yup.object().shape({
@@ -46,6 +47,7 @@ const FORM_VALIDATION = Yup.object().shape({
     country: Yup.string().required('Required'),
     arrivalDate: Yup.date().required('Required'),
     departureDate: Yup.date().required('Required'),
+    message: Yup.string(),
 });
 
 function App() {
@@ -145,6 +147,15 @@ function App() {
                                         <DateTimePicker
                                             name='departureDate'
                                             label='Departure Date'
+                                        />
+                                    </Grid>
+
+                                    <Grid item xs={12}>
+                                        <TextField
+                                            name='message'
+                                            label='Message'
+                                            multiline={true}
+                                            rows={4}
                                         />
                                     </Grid>
                                 </Grid>
