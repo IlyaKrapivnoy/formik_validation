@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import TextField from './components/FormsUI/TextField';
 import Select from './components/FormsUI/Select';
+import DateTimePicker from './components/FormsUI/DateTimePicker';
 import countries from './data/countries.json';
 import './App.css';
 import { Container, Grid } from '@material-ui/core';
@@ -26,6 +27,8 @@ const INITIAL_FORM_STATE = {
     city: '',
     state: '',
     country: '',
+    arrivalDate: '',
+    departureDate: '',
 };
 
 const FORM_VALIDATION = Yup.object().shape({
@@ -41,6 +44,8 @@ const FORM_VALIDATION = Yup.object().shape({
     city: Yup.string().required('Required'),
     state: Yup.string().required('Required'),
     country: Yup.string().required('Required'),
+    arrivalDate: Yup.date().required('Required'),
+    departureDate: Yup.date().required('Required'),
 });
 
 function App() {
@@ -127,6 +132,20 @@ function App() {
                                         <Typography>
                                             Booking Information
                                         </Typography>
+                                    </Grid>
+
+                                    <Grid item xs={6}>
+                                        <DateTimePicker
+                                            name='arrivalDate'
+                                            label='Arrival Date'
+                                        />
+                                    </Grid>
+
+                                    <Grid item xs={6}>
+                                        <DateTimePicker
+                                            name='departureDate'
+                                            label='Departure Date'
+                                        />
                                     </Grid>
                                 </Grid>
                             </Form>
